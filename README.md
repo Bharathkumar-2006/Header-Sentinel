@@ -3,13 +3,11 @@
 
 ## Check security headers on a target website
 
-I did this tool to help me to check which security headers are enabled on certain websites.
+Built this quick CLI tool to scan websites for essential security headers like CSP, HSTS, X-Frame-Options, and more.
 
-The tool is very simple and it's the result of few minutes of coding.
+It fetches HTTP responses, analyzes key headers, and generates a clear report showing what's properly configured vs. missing or weak.
 
-It just check headers and print a report about which are enabled and which not
-
-I think there is a lot to improve, and I will be grateful if somebody wants to help
+Minimalist design from a short coding session - perfect starting point for contributions like JSON export, batch scanning, or advanced validation rules.
 
 ## How to run:
 
