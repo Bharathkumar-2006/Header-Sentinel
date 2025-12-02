@@ -11,8 +11,13 @@ import os
 import json
 from optparse import OptionParser
 
-def colorize(string, alert):
-    return string
+# Color helper
+def colorize(text, mode):
+    if mode == "ok":      # present -> green
+        return f"\033[92m{text}\033[0m"
+    if mode == "error":   # missing -> red
+        return f"\033[91m{text}\033[0m"
+    return text
 
 
 # Client headers 
@@ -22,7 +27,6 @@ client_headers = {
     'Accept-Language': 'en-US;q=0.8,en;q=0.3',
     'Upgrade-Insecure-Requests': 1
 }
-
 
 # Security headers that should be enabled
 sec_headers = {
@@ -219,11 +223,11 @@ def main():
                 safe += 1
 
                 if lsafeh == "content-security-policy":
-                    log(f"[*] Header {safeh} is present!")
+                    log(colorize(f"[*] Header {safeh} is present!", "ok"))
                     parse_csp(headers[lsafeh])
 
                 else:
-                    log(f"[*] Header {safeh} is present! (Value: {headers[lsafeh]})")
+                    log(colorize(f"[*] Header {safeh} is present! (Value: {headers[lsafeh]})", "ok"))
 
             else:
                 if safeh == "Strict-Transport-Security" and not is_https(rUrl):
@@ -233,7 +237,7 @@ def main():
                     continue
 
                 unsafe += 1
-                log(f"[!] Security header missing: {safeh}")
+                log(colorize(f"[!] Security header missing: {safeh}", "error"))
 
         if information:
             log("")
