@@ -11,12 +11,11 @@ import os
 import json
 from optparse import OptionParser
 
-# Simple color-strip function
 def colorize(string, alert):
     return string
 
 
-# Client headers to send to the server during the request.
+# Client headers 
 client_headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -65,17 +64,17 @@ def log(string):
 
 def banner():
     log("")
-    log("====================================================================")
-    log(" > HeaderSentinel.py - HTTP Security Header Recon Toolkit           ")
-    log("--------------------------------------------------------------------")
-    log(" Author : Bharathkumar M (a.k.a XpL0itX)                            ")
-    log(" GitHub : https://github.com/Bharathkumar-2006/Header-Sentinel.git  ")
-    log("--------------------------------------------------------------------")
-    log(" Description:                                                       ")
-    log("  HeaderSentinel inspects HTTP responses for modern security        ")
-    log("  headers (CSP, HSTS, XFO, etc.), helping you quickly spot          ")
-    log("  missing or misconfigured protections based on OWASP guidance.     ")
-    log("====================================================================")
+    log("========================================================================")
+    log("||   HeaderSentinel.py - HTTP Security Header Recon Toolkit           ||")
+    log("||--------------------------------------------------------------------||")
+    log("|| Author : Bharathkumar M (a.k.a XpL0itX)                            ||")
+    log("|| GitHub : https://github.com/Bharathkumar-2006/Header-Sentinel.git  ||")
+    log("||--------------------------------------------------------------------||")
+    log("|| Description:                                                       ||")
+    log("||  HeaderSentinel inspects HTTP responses for modern security        ||")
+    log("||  headers (CSP, HSTS, XFO, etc.), helping you quickly spot          ||")
+    log("||  missing or misconfigured protections based on OWASP guidance.     ||")
+    log("========================================================================")
     log("")
 
 
