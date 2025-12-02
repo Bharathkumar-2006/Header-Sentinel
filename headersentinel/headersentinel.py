@@ -245,7 +245,6 @@ def parse_csp(csp):
 
 
 def main():
-    # Getting options
     global options
     options, targets = parse_options()
 
@@ -417,10 +416,6 @@ def parse_options():
     parser.add_option("-c", "--cookie", dest="cookie",
                       help="Set cookies for the request",
                       metavar="COOKIE_STRING")
-    parser.add_option("-a", "--add-header", dest="custom_headers",
-                      help="Add headers for the request e.g. 'Header: value'",
-                      metavar="HEADER_STRING",
-                      action="append")
     parser.add_option('-d', "--disable-ssl-check", dest="ssldisabled",
                       default=False,
                       help="Disable SSL/TLS certificate validation",
@@ -431,9 +426,6 @@ def parse_options():
     parser.add_option('-m', "--use-method", dest="usemethod", default='HEAD',
                       choices=["HEAD", "GET", "POST", "PUT", "DELETE", "TRACE"],
                       help="Use a specified method",)
-    parser.add_option("-j", "--json-output", dest="json_output",
-                      default=False, help="Print the output in JSON format",
-                      action="store_true")
     parser.add_option("-i", "--information", dest="information", default=False,
                       help="Display information headers",
                       action="store_true")
