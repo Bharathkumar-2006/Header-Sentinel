@@ -446,6 +446,9 @@ def parse_options():
     parser.add_option("--proxy", dest="proxy",
                       help="Set a proxy (Ex: http://127.0.0.1:8080)",
                       metavar="PROXY_URL")
+    parser.add_option("--hfile", dest="hfile",
+                      help="Load a list of hosts from a flat file",
+                      metavar="PATH_TO_FILE")
     (options, targets) = parser.parse_args()
 
     if len(targets) < 1 and options.hfile is None:
