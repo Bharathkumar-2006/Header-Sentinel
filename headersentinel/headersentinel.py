@@ -11,7 +11,7 @@ import os
 import json
 from optparse import OptionParser
 
-# Color helper
+
 def colorize(text, mode):
     if mode == "ok":      # present -> green
         return f"\033[92m{text}\033[0m"
@@ -20,7 +20,6 @@ def colorize(text, mode):
     return text
 
 
-# Client headers 
 client_headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -28,7 +27,7 @@ client_headers = {
     'Upgrade-Insecure-Requests': 1
 }
 
-# Security headers that should be enabled
+# Security headers 
 sec_headers = {
     'X-XSS-Protection': 'deprecated',
     'X-Frame-Options': 'warning',
